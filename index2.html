@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Literário - Opiniões sobre Livros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">📚 Blog Literário</div> <header> { backgoround-color: yellow (11, 06, 16) } </header>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#artigos">Artigos</a></li>
+                    <li><a href="#comentarios">Comentários</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>Bem-vindo ao Blog Literário</h1>
+                <p>Compartilhe suas opiniões e leia o que outros pensam sobre os livros que amamos</p>
+            </div>
+        </section>
+
+        <!-- Artigos Section -->
+        <section id="artigos" class="artigos">
+            <div class="container">
+                <h2>Artigos em Destaque</h2>
+                <div class="artigos-grid">
+                    <!-- Artigo 1 -->
+                    <article class="artigo-card">
+                        <div class="artigo-header">
+                            <h3>O Cortiço - Aluísio Azevedo</h3>
+                            <span class="data">23 de Junho, 2026</span>
+                        </div>
+                        <p class="resumo">Uma obra realista que retrata a vida cotidiana em um cortiço do Rio de Janeiro. Um retrato social fascinante que permanece relevante até hoje.</p>
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐ (5/5 estrelas)
+                        </div>
+                        <button class="btn-comentar" onclick="focusComentario(1)">Dar sua opinião</button>
+                    </article>
+
+                    <!-- Artigo 2 -->
+                    <article class="artigo-card">
+                        <div class="artigo-header">
+                            <h3>Dom Casmurro - Machado de Assis</h3>
+                            <span class="data">22 de Maio, 2026</span>
+                        </div>
+                        <p class="resumo">Uma narrativa envolvente sobre amor, ciúme e traição. Machado de Assis nos presenteia com personagens inesquecíveis e reviravoltas surpreendentes.</p>
+                        <div class="rating">
+                            ⭐⭐⭐⭐ (4/5 estrelas)
+                        </div>
+                        <button class="btn-comentar" onclick="focusComentario(2)">Dar sua opinião</button>
+                    </article>
+
+                    <!-- Artigo 3 -->
+                    <article class="artigo-card">
+                        <div class="artigo-header">
+                            <h3>Grande Sertão: Veredas - Guimarães Rosa</h3>
+                            <span class="data">04 de Novembro, 2025</span>
+                        </div>
+                        <p class="resumo">Uma obra épica que desafia convenções. A linguagem poética de Rosa transporta o leitor para o coração do sertão brasileiro.</p>
+                        <div class="rating">
+                            ⭐⭐⭐⭐⭐ (5/5 estrelas)
+                        </div>
+                        <button class="btn-comentar" onclick="focusComentario(3)">Dar sua opinião</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comentários Section -->
+        <section id="comentarios" class="comentarios">
+            <div class="container">
+                <h2>Deixe sua Opinião</h2>
+                <p class="instrucoes">Qual livro você leu recentemente? Compartilhe sua opinião com nossa comunidade!</p>
+                
+                <form class="form-comentario" onsubmit="adicionarComentario(event)">
+                    <div class="form-group">
+                        <label for="nome">Seu Nome:</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="livro">Nome do Livro:</label>
+                        <input type="text" id="livro" name="livro" required placeholder="Qual livro você leu?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="autor">Autor:</label>
+                        <input type="text" id="autor" name="autor" required placeholder="Quem é o autor?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating">Avaliação:</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Selecione uma avaliação</option>
+                            <option value="⭐">⭐ (1/5 estrelas)</option>
+                            <option value="⭐⭐">⭐⭐ (2/5 estrelas)</option>
+                            <option value="⭐⭐⭐">⭐⭐⭐ (3/5 estrelas)</option>
+                            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (4/5 estrelas)</option>
+                            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (5/5 estrelas)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="opiniao">Sua Opinião:</label>
+                        <textarea id="opiniao" name="opiniao" required placeholder="O que você achou do livro? Deixe sua opinião aqui..." rows="6"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar Opinião</button>
+                </form>
+
+                <!-- Seção de Comentários Exibidos -->
+                <div class="comentarios-exibidos">
+                    <h3>Opiniões da Comunidade</h3>
+                    <div id="listaComentarios" class="lista-comentarios">
+                        <p class="sem-comentarios">Nenhum comentário ainda. Seja o primeiro a compartilhar sua opinião!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Blog Literário. Todos os direitos reservados.</p>
+            <p>Um espaço para leitores compartilharem suas paixões por livros 📚</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
